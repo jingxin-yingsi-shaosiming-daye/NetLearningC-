@@ -42,12 +42,12 @@ public class Echo : MonoBehaviour
 
         byte[] bytes = System.Text.Encoding.Default.GetBytes(sendStr);
 
-        socket.Send(bytes);
+        socket.Send(bytes);//阻塞方法  等收到接收消息后执行下一行
         
         //Recv
         byte[] readBuff = new byte[1024];
 
-        int count = socket.Receive(readBuff);
+        int count = socket.Receive(readBuff);//阻塞发方法
         
         string s = System.Text.Encoding.Default.GetString(readBuff,0,count);
 
