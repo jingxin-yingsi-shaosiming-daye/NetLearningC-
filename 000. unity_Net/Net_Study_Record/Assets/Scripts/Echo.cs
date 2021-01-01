@@ -17,7 +17,7 @@ public class Echo : MonoBehaviour
     public InputField inputFeld;
 
     /// <summary>
-    /// 连接按钮触发事件
+    /// 点击按钮触发事件
     /// </summary>
     public void Connection()
     {
@@ -46,8 +46,8 @@ public class Echo : MonoBehaviour
         
         //Recv
         byte[] readBuff = new byte[1024];
-
-        int count = socket.Receive(readBuff);//阻塞发方法
+ 
+        int count = socket.Receive(readBuff);//阻塞方法
         
         string s = System.Text.Encoding.Default.GetString(readBuff,0,count);
 
